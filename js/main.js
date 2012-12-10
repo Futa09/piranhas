@@ -136,7 +136,7 @@
       state.me.x = width / 2;
       state.me.y = height / 2;
 
-      //Need to redefine totalTime because if the game was paused once totalTime will be the once set at handle pause
+      // Clear score from previous game
       Game.totalTime = 0;
       this.chunkStart = Date.now();
       this.timestamp = Date.now();
@@ -148,10 +148,10 @@
       }
       if (this.isPaused) {
         this.isPaused = false;
-        //allow to resume the game
-	this.chunkStart = Date.now();
-	this.timestamp = Date.now();
-	requestAnimationFrame(step);
+        // Allow to resume the game
+        this.chunkStart = Date.now();
+        this.timestamp = Date.now();
+        requestAnimationFrame(step);
       } else {
         this.isPaused = true;
       }
